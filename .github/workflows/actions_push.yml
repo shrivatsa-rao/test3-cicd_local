@@ -16,7 +16,7 @@ jobs:
         uses: kong/setup-inso@v1
         with:
           inso-version: 3.5.0
-      - run: inso --version
+        run: inso --version
       - name: Install Kong Deck CLI
         uses: kong/setup-deck@v1
         run: deck version
