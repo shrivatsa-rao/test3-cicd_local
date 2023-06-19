@@ -16,10 +16,8 @@ jobs:
         uses: kong/setup-inso@v1
         with:
           inso-version: 3.5.0
-        run: inso --version
       - name: Install Kong Deck CLI
         uses: kong/setup-deck@v1
-        run: deck version
       - name: Generate Kong declarative configuration from Spec
         run: inso generate config ./openapi/orders.yaml --type declarative > kong2.x.yaml
       - name: Convert configuration for 3.0
