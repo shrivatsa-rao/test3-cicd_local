@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup inso
-        uses: Kong/setup-inso@v1
       - name: Generate Kong declarative configuration from Spec
         run: inso generate config ./openapi/orders.yaml --type declarative > kong2.x.yaml
       - name: Convert configuration for 3.0
