@@ -29,6 +29,6 @@ jobs:
       - name: Validate Kong declarative configuration
         run: deck validate -s kong3.x.yaml
       - name: Deploy declarative config
-        run: deck sync -s kong3.x.yaml --workspace petstore
+        run: deck sync -s kong3.x.yaml 
       - name: Publish Spec to Dev Portal
         run: cd ./openapi && http --check-status --ignore-stdin PUT :8001/default/files/specs/orders.yaml contents=@orders.yaml
