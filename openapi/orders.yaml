@@ -16,10 +16,10 @@ paths:
       summary: Fetches an order
       tags:
         - order
-      x-kong-plugin-mocking:
-        enabled: true
-        config:
-          api_specification_filename: orders.yaml     
+      x-kong-rate-limiting:
+        anonymous:
+          rate_limit: 50
+          burst_limit: 5    
       responses:
         '200':
           description: Order object
