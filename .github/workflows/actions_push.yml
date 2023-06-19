@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy_to_kong:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Apply generated configuration to local Kong gateway and update API documentation
     steps:
       - name: Checkout
