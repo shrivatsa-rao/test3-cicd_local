@@ -33,6 +33,6 @@ jobs:
       - name: Validate Kong declarative configuration
         run: deck validate -s kong3.x.yaml
       - name: Deploy declarative config
-        run: deck sync -s kong3.x.yaml --kong-addr $KONG_ADMIN_URL
+        run: deck sync -s kong3.x.yaml --kong-addr "$(echo $KONG_ADMIN_URL)"
       # - name: Publish Spec to Dev Portal
       # run: cd ./openapi && http --check-status --ignore-stdin PUT http://16.16.254.147:8001/default/files/specs/orders.yaml contents=@orders.yaml
