@@ -27,7 +27,7 @@ jobs:
       - name: Convert configuration for 3.0
         run: deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file kong2.x.yaml --output-file kong3-b.x.yaml
       - name: Connect to Kong instance 
-        run: deck ping --kong-addr "$(echo $KONG_ADMIN_URL)"
+        run: deck ping --kong-addr "$KONG_ADMIN_URL"
       - name: fix temporary regex issue 
         run: sed 's/\\//' kong3-b.x.yaml > kong3.x.yaml
       - name: Validate Kong declarative configuration
