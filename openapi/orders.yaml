@@ -17,7 +17,7 @@ paths:
       tags:
         - order
        x-kong-plugins:
-        - name: rate-limiting
+          name: rate-limiting
           config:
             minute: 10
             hour: 100 
