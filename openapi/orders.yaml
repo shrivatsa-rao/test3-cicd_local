@@ -16,10 +16,11 @@ paths:
       summary: Fetches an order
       tags:
         - order
-      x-kong-rate-limiting:
-        anonymous:
-          rate_limit: 50
-          burst_limit: 5    
+       x-kong-plugins:
+        - name: rate-limiting
+          config:
+            minute: 10
+            hour: 100 
       responses:
         '200':
           description: Order object
