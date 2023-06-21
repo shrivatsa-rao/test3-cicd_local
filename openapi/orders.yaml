@@ -20,7 +20,6 @@ paths:
         - name: rate-limiting
           config:
             minute: 10
-            hour: 100 
       responses:
         '200':
           description: Order object
