@@ -16,10 +16,12 @@ paths:
       summary: Fetches an order
       tags:
         - order
-      x-kong-plugins:
-        - name: rate-limiting
-          config:
-            minute: 10
+      x-kong-plugin-rate-limiting:
+        enabled: true
+        config:
+          minute: 5
+          limit_by: ip
+          policy: local
       responses:
         '200':
           description: Order object
