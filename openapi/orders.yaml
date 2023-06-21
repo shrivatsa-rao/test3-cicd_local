@@ -16,8 +16,8 @@ paths:
       summary: Fetches an order
       tags:
         - order
-       x-kong-plugins:
-          name: rate-limiting
+      x-kong-plugins:
+        - name: rate-limiting
           config:
             minute: 10
             hour: 100 
